@@ -59,44 +59,75 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid w-full gap-8 grid-cols-1 lg:grid-cols-2">
             {projects.map((project) => {
-              const isRailGo = project.id === "proj-railgo";
+              const isFeatured = project.featured;
+              const isRoboPlanner = project.id === "proj-roboplanner";
 
               return (
                 <motion.div
                   key={project.id}
                   variants={fadeInUp}
-                  className={isRailGo ? "lg:col-span-2" : "lg:col-span-1"}
+                  className={isFeatured ? "lg:col-span-2" : "lg:col-span-1"}
                 >
                   <Card
-                    featured={project.featured}
+                    featured={isFeatured}
                     className="h-full flex flex-col justify-between text-left"
                   >
                     <div className="flex flex-col justify-between h-full">
                       <div>
                         {/* Header Details */}
-                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                          <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent bg-accent/5 border border-accent/15 px-3 py-1 rounded-full flex items-center gap-1.5">
-                            {isRailGo && <Sparkles className="h-3 w-3" />}
-                            {project.role}
-                          </span>
-                          <span className="text-xs text-muted-foreground font-sans font-medium">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 mb-4">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 border border-accent/20 px-3 py-1 rounded-full flex items-center gap-1.5">
+                              {isFeatured && <Sparkles className="h-3.5 w-3.5 text-accent" />}
+                              {project.role}
+                            </span>
+                            {isRoboPlanner && (
+                              <span className="font-mono text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-500/25 px-2.5 py-0.5 rounded-full">
+                                AI20K • VinUni & VSF
+                              </span>
+                            )}
+                            {project.id === "proj-railgo" && (
+                              <span className="font-mono text-[11px] font-semibold text-accent bg-accent/5 border border-accent/15 px-2.5 py-0.5 rounded-full">
+                                FPT Software Intern
+                              </span>
+                            )}
+                          </div>
+                          <span className="text-xs text-muted-foreground font-sans font-medium italic">
                             {project.tagline}
                           </span>
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-foreground mb-4">
+                        <h3 className="font-sans text-xl md:text-2xl font-bold tracking-tight text-foreground mb-3">
                           {project.name}
                         </h3>
 
                         {/* Description */}
-                        <p className="font-sans text-sm md:text-base leading-relaxed text-muted-foreground mb-6">
+                        <p className="font-sans text-sm md:text-base leading-relaxed text-muted-foreground mb-4">
                           {project.description}
                         </p>
+
+                        {/* Technical Evidence Highlights (Exclusive for RoboPlanner) */}
+                        {isRoboPlanner && (
+                          <div className="grid grid-cols-3 gap-2 my-5 p-3.5 rounded-xl bg-accent/[0.03] border border-accent/15">
+                            <div className="text-center">
+                              <div className="font-mono text-base md:text-lg font-bold text-accent">0%</div>
+                              <div className="text-[11px] text-muted-foreground font-medium">Hallucinated Done</div>
+                            </div>
+                            <div className="text-center border-x border-border/80">
+                              <div className="font-mono text-base md:text-lg font-bold text-accent">100%</div>
+                              <div className="text-[11px] text-muted-foreground font-medium">Infeasible Correct</div>
+                            </div>
+                            <div className="text-center">
+                              <div className="font-mono text-base md:text-lg font-bold text-accent">346</div>
+                              <div className="text-[11px] text-muted-foreground font-medium">Tests Passing</div>
+                            </div>
+                          </div>
+                        )}
                       </div>
 
                       {/* Footer Info */}
-                      <div>
+                      <div className="mt-4 pt-4 border-t border-border/50">
                         {/* Tech Stack Tags */}
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.techs.map((tech) => (
@@ -110,23 +141,23 @@ export default function Projects() {
                         </div>
 
                         {/* Project Actions */}
-                        <div className="flex flex-wrap gap-3 w-full sm:w-auto">
+                        <div className="flex flex-wrap items-center gap-3">
                           {project.demo && (
                             <Button
                               variant="primary"
                               size="sm"
                               onClick={() => window.open(project.demo, "_blank")}
-                              className="flex-1 sm:flex-initial"
+                              className="gap-2 shadow-sm"
                             >
                               <ExternalLink className="h-3.5 w-3.5" />
                               <span>Trải nghiệm Live Demo</span>
                             </Button>
                           )}
                           <Button
-                            variant={project.demo ? "outline" : (project.featured ? "primary" : "outline")}
+                            variant={project.demo ? "outline" : (isFeatured ? "primary" : "outline")}
                             size="sm"
                             onClick={() => window.open(project.link, "_blank")}
-                            className="flex-1 sm:flex-initial"
+                            className="gap-2"
                           >
                             {getLinkIcon(project.link)}
                             <span>Source Code</span>
