@@ -48,7 +48,7 @@ export default function Experience() {
 
           {/* Timeline */}
           <div className="relative w-full border-l-2 border-border pl-6 md:pl-10 ml-3 md:ml-6 flex flex-col gap-12">
-            {experiences.map((exp, idx) => (
+            {experiences.map((exp) => (
               <motion.div key={exp.id} variants={fadeInUp} className="relative">
                 {/* Timeline node */}
                 <div className="absolute -left-[35px] md:-left-[51px] top-1.5 flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-full border border-accent/25 bg-background shadow-md">

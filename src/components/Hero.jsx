@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { FileText, ArrowRight, Code2, Terminal, Cpu } from "lucide-react";
+import { FileText, ArrowRight, Code2, Bot, Cpu } from "lucide-react";
 import { GithubIcon, GitlabIcon, FacebookIcon, InstagramIcon } from "./ui/Icons";
 import { portfolioData } from "../data/portfolio";
 import { Button } from "./ui/Button";
@@ -240,18 +240,18 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* Floating Card 3 (Git / Tools) */}
+              {/* Floating Card 3 (AI Agents / LangGraph) */}
               <motion.div
                 className="absolute -bottom-6 left-12"
                 animate={floatCard3}
               >
                 <div className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-lg hover:border-accent/30 transition-colors duration-300">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/5 text-accent-secondary">
-                    <Terminal className="h-5 w-5" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                    <Bot className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold font-sans text-foreground">Git / DevOps</h4>
-                    <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">CI/CD</p>
+                    <h4 className="text-xs font-bold font-sans text-foreground">LangGraph</h4>
+                    <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">AI Agents</p>
                   </div>
                 </div>
               </motion.div>

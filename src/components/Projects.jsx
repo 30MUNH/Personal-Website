@@ -109,17 +109,30 @@ export default function Projects() {
                           ))}
                         </div>
 
-                        {/* Project Link Action */}
-                        <Button
-                          variant={project.featured ? "primary" : "outline"}
-                          size="sm"
-                          onClick={() => window.open(project.link, "_blank")}
-                          className="w-full sm:w-auto"
-                        >
-                          {getLinkIcon(project.link)}
-                          <span>Xem Source Code</span>
-                          <ExternalLink className="h-3.5 w-3.5" />
-                        </Button>
+                        {/* Project Actions */}
+                        <div className="flex flex-wrap gap-3 w-full sm:w-auto">
+                          {project.demo && (
+                            <Button
+                              variant="primary"
+                              size="sm"
+                              onClick={() => window.open(project.demo, "_blank")}
+                              className="flex-1 sm:flex-initial"
+                            >
+                              <ExternalLink className="h-3.5 w-3.5" />
+                              <span>Trải nghiệm Live Demo</span>
+                            </Button>
+                          )}
+                          <Button
+                            variant={project.demo ? "outline" : (project.featured ? "primary" : "outline")}
+                            size="sm"
+                            onClick={() => window.open(project.link, "_blank")}
+                            className="flex-1 sm:flex-initial"
+                          >
+                            {getLinkIcon(project.link)}
+                            <span>Source Code</span>
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </Card>

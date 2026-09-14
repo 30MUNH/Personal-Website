@@ -5,11 +5,7 @@ import { portfolioData } from "../data/portfolio";
 import { Badge } from "./ui/Badge";
 import { Card } from "./ui/Card";
 
-const icons = [
-  <Lightbulb className="h-6 w-6 text-accent" />,
-  <ShieldAlert className="h-6 w-6 text-accent" />,
-  <Heart className="h-6 w-6 text-accent" />,
-];
+const icons = [Lightbulb, ShieldAlert, Heart];
 
 export default function About() {
   const { objective, strengths } = portfolioData.about;
@@ -65,24 +61,27 @@ export default function About() {
             variants={stagger}
             className="grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {strengths.map((strength, index) => (
-              <motion.div key={strength.id} variants={fadeInUp}>
-                <Card
-                  asymmetric={index === 1} // Make the middle card organic asymmetric
-                  className="h-full flex flex-col items-start text-left bg-card transition-all duration-300"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/5 mb-6 border border-accent/10">
-                    {icons[index % icons.length]}
-                  </div>
-                  <h3 className="font-sans text-lg md:text-xl font-bold tracking-tight text-foreground mb-3">
-                    {strength.title}
-                  </h3>
-                  <p className="font-sans text-sm md:text-base leading-relaxed text-muted-foreground">
-                    {strength.description}
-                  </p>
-                </Card>
-              </motion.div>
-            ))}
+            {strengths.map((strength, index) => {
+              const IconComponent = icons[index % icons.length];
+              return (
+                <motion.div key={strength.id} variants={fadeInUp}>
+                  <Card
+                    asymmetric={index === 1} // Make the middle card organic asymmetric
+                    className="h-full flex flex-col items-start text-left bg-card transition-all duration-300"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/5 mb-6 border border-accent/10">
+                      <IconComponent className="h-6 w-6 text-accent" />
+                    </div>
+                    <h3 className="font-sans text-lg md:text-xl font-bold tracking-tight text-foreground mb-3">
+                      {strength.title}
+                    </h3>
+                    <p className="font-sans text-sm md:text-base leading-relaxed text-muted-foreground">
+                      {strength.description}
+                    </p>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </motion.div>
       </div>

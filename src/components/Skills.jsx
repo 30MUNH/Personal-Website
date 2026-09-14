@@ -46,10 +46,10 @@ export default function Skills() {
             Kỹ năng chuyên môn & <span className="gradient-text">Công nghệ</span>
           </motion.h2>
 
-          {/* Skills Grid */}
+          {/* Skills Grid (2x2 layout for 4 categories) */}
           <motion.div
             variants={stagger}
-            className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-3"
+            className="grid w-full gap-8 grid-cols-1 md:grid-cols-2"
           >
             {categories.map((cat, idx) => (
               <motion.div key={idx} variants={fadeInUp} className="h-full">
