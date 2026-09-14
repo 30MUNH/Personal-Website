@@ -1,7 +1,7 @@
 export const portfolioData = {
   personalInfo: {
     fullName: "Nguyễn Đình Tiến Mạnh",
-    titles: ["AI Software Engineer", "Fullstack & AI Developer Intern"],
+    titles: ["AI Software Engineer", "Fullstack & AI Developer"],
     tagline: "Sinh viên năm 4 Kỹ thuật phần mềm – FPT University | Đam mê AI Agents, LLM Integration & Hệ thống Web Full-stack (ReactJS, NestJS)",
     cvLink: "/CV_NguyenDinhTienManh.pdf", // Real downloadable CV file path
     socials: {
@@ -35,7 +35,7 @@ export const portfolioData = {
   },
   stats: [
     { value: "6+", label: "Dự án hoàn thành" },
-    { value: "5.5", label: "Tháng thực tập" },
+    { value: "5.5", label: "Tháng kinh nghiệm" },
     { value: "12+", label: "Công nghệ sử dụng" },
     { value: "1", label: "Chứng chỉ AI thực chiến" }
   ],
@@ -77,7 +77,7 @@ export const portfolioData = {
     {
       id: "exp-vsf",
       company: "Vinsmart Future (VSF)",
-      role: "AI Intern",
+      role: "AI Engineer",
       period: "Tháng 7/2026 – Tháng 8/2026 (6 tuần)",
       project: {
         name: "Đánh giá chất lượng sản phẩm & AI Technical Challenges",
@@ -91,7 +91,7 @@ export const portfolioData = {
     {
       id: "exp-fpt",
       company: "FPT Software",
-      role: "Fullstack Developer Intern",
+      role: "Fullstack Developer",
       period: "Tháng 1/2026 – Tháng 4/2026",
       project: {
         name: "RailGo (Hệ thống đặt vé tàu hỏa)",

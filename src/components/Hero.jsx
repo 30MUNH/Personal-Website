@@ -84,7 +84,7 @@ export default function Hero() {
             >
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                Sẵn sàng thực tập
+                Sẵn sàng làm việc
               </span>
             </motion.div>
 

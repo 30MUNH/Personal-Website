@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Nguyễn Đình Tiến Mạnh - Fullstack & AI Engineer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1E293B;
+      background-color: #F8FAFC;
+      line-height: 1.45;
+      font-size: 9.5pt;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 16mm 18mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Accent Line */
+    .page::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #0052FF, #4F46E5, #0052FF);
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 1.5px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .candidate-name {
+      font-size: 20pt;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    .candidate-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0052FF;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-item a {
+      color: #1E293B;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: #0052FF;
+      text-decoration: underline;
+    }
+
+    .icon {
+      width: 13px;
+      height: 13px;
+      color: #0052FF;
+      flex-shrink: 0;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0F172A;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.5px solid #0052FF;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-title .bullet {
+      width: 6px;
+      height: 6px;
+      background: #0052FF;
+      border-radius: 1px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 9pt;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.45;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 14px;
+    }
+
+    .skill-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 3px solid #0052FF;
+      border-radius: 4px;
+      padding: 6px 9px;
+    }
+
+    .skill-card-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 3px;
+    }
+
+    .skill-card-desc {
+      font-size: 8pt;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-bottom: 11px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .exp-role-company {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .exp-role-company span.company {
+      color: #0052FF;
+    }
+
+    .exp-date {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #64748B;
+      font-family: monospace;
+    }
+
+    .exp-sub {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3px;
+      font-size: 8.5pt;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.38;
+    }
+
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      top: 0;
+      color: #0052FF;
+      font-weight: bold;
+      font-size: 11pt;
+      line-height: 1;
+    }
+
+    /* Project Cards on Page 2 */
+    .project-item {
+      margin-bottom: 11px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 9px 12px;
+    }
+
+    .project-item.featured {
+      border: 1.5px solid #BFDBFE;
+      background: #FAFCFF;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .project-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .project-tagline {
+      font-size: 8pt;
+      color: #64748B;
+      font-style: italic;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+      font-size: 7.5pt;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-family: monospace;
+      font-size: 7pt;
+      text-transform: uppercase;
+    }
+
+    .badge-primary {
+      background: #EFF6FF;
+      color: #0052FF;
+      border: 1px solid #DBEAFE;
+    }
+
+    .badge-success {
+      background: #ECFDF5;
+      color: #059669;
+      border: 1px solid #D1FAE5;
+    }
+
+    .badge-tech {
+      background: #F1F5F9;
+      color: #475569;
+      border: 1px solid #E2E8F0;
+    }
+
+    .project-links a {
+      color: #0052FF;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 7.5pt;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Metrics Strip for Flagship */
+    .metrics-strip {
+      display: flex;
+      gap: 8px;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 4px 0 6px 0;
+    }
+
+    .metric-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #0052FF;
+      font-family: monospace;
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 6.5pt;
+      color: #64748B;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Education & Certificates */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .edu-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 8px 10px;
+    }
+
+    .edu-card.highlight {
+      border: 1.5px solid #BFDBFE;
+      background: #FAFCFF;
+    }
+
+    .edu-name {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 2px;
+    }
+
+    .edu-sub {
+      font-size: 8pt;
+      color: #0052FF;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .edu-desc {
+      font-size: 7.5pt;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1 ================= -->
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <h1 class="candidate-name">NGUYỄN ĐÌNH TIẾN MẠNH <span style="font-size: 13pt; font-weight: 600; color: #475569;">(Ambrose)</span></h1>
+        <div class="candidate-title">Fullstack & AI Engineer</div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span style="font-weight: 700; color: #0052FF;">Ambrose.dev</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>0373325643</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:dunguyendinh910@gmail.com">dunguyendinh910@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Hà Nội, Việt Nam</span>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <a href="https://github.com/30MUNH" target="_blank">github.com/30MUNH</a>
+        </div>
+        <div class="contact-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 5 1.85a.43.43 0 0 1 .42.27l2.25 6.9h8.66l2.25-6.9a.42.42 0 0 1 .42-.27.42.42 0 0 1 .39.31l2.44 7.51 1.22 3.78c.1.31 0 .68-.3.94z"/></svg>
+          <a href="https://gitlab.com/30MUNH" target="_blank">gitlab.com/30MUNH</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>TỔNG QUAN NGHỀ NGHIỆP</span>
+      </div>
+      <p class="summary-text">
+        Kỹ sư phần mềm định hướng AI với nền tảng Full-stack hiện đại (ReactJS, NestJS, TypeScript) kết hợp kinh nghiệm thực chiến phát triển các hệ thống AI Agent tự trị (LangGraph, Python). Tốt nghiệp Chương trình Đào tạo Nhân tài AI Thực chiến của Tập đoàn Vingroup & Đại học VinUni (chuẩn khung năng lực SFIA quốc tế) và hoàn thành giai đoạn thực chiến tại Vinsmart Future (VSF). Sở hữu tư duy giải quyết vấn đề thực tế, năng lực kiểm thử nghiêm ngặt (0% hallucination) và khả năng chuyển giao sản phẩm AI vào hệ thống web vận hành ổn định.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>KỸ NĂNG CHUYÊN MÔN</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-title">🤖 AI & Agentic Systems</div>
+          <div class="skill-card-desc">
+            LangGraph, LangChain, ReAct / Plan-and-Execute Loop, Tool Calling, PyBullet 3D Simulation, MuJoCo, LLM APIs (Claude, Gemini, Ollama), SFIA Framework, AI Quality Evaluation & Benchmarking.
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">💻 Frontend Development</div>
+          <div class="skill-card-desc">
+            ReactJS, JavaScript (ES6+), TypeScript, HTML5, CSS3, Tailwind CSS, Responsive Design, State Management (Hooks, Context API, Session Storage), Component-Driven Architecture.
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">⚙️ Backend & Architecture</div>
+          <div class="skill-card-desc">
+            NestJS, Node.js, Python 3.11 (FastAPI, WebSocket), RESTful APIs Design, MongoDB, PostgreSQL, Microservices, Java OOP (Collections, Exception Handling), PHP.
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">🛠️ DevOps & Testing</div>
+          <div class="skill-card-desc">
+            Git/Git CLI, GitHub, GitLab (Branching, PRs, Code Review), pytest, hypothesis, Playwright E2E, Docker basics, Invariant Guardrails, Oracle Verification, Agile/Scrum.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>KINH NGHIỆM LÀM VIỆC</span>
+      </div>
+
+      <!-- Experience 1: VSF -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role-company">
+            KỸ SƯ AI (AI ENGINEER) — <span class="company">VINSMART FUTURE (VSF)</span>
+          </div>
+          <div class="exp-date">07/2026 – 08/2026 (6 tuần)</div>
+        </div>
+        <div class="exp-sub">Chương trình Giai đoạn 3: Thực chiến Doanh nghiệp (Tập đoàn Vingroup)</div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Đánh giá chất lượng sản phẩm AI (AI Product Evaluation):</strong> Tham gia quy trình đánh giá chất lượng và benchmarking tính năng AI trong sản phẩm, thiết lập các bộ tiêu chí đo lường độ chính xác, độ trễ và tính khả dụng của giải pháp AI trước khi triển khai.
+          </li>
+          <li>
+            <strong>Giải quyết các thử thách kỹ thuật (AI Technical Challenges):</strong> Trực tiếp nghiên cứu và thực hiện các thử thách kỹ thuật chuyên sâu do Mentor giao phó, tối ưu luồng xử lý Agent, tinh chỉnh prompt và nâng cao hiệu năng suy luận của mô hình.
+          </li>
+          <li>
+            <strong>Kiểm thử & Nghiệm thu:</strong> Phối hợp cùng các kỹ sư AI tại VSF xây dựng kịch bản kiểm thử tương tác người dùng - AI thực tế, xác thực các ràng buộc an toàn (guardrails) và hoàn thiện tiêu chuẩn nghiệm thu sản phẩm.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Experience 2: FPT Software -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role-company">
+            FULLSTACK DEVELOPER — <span class="company">FPT SOFTWARE</span>
+          </div>
+          <div class="exp-date">01/2026 – 04/2026 (4 tháng)</div>
+        </div>
+        <div class="exp-sub">Dự án: RailGo (Hệ thống đặt vé tàu hỏa trực tuyến quy mô lớn)</div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Phát triển Frontend (ReactJS):</strong> Thiết kế UI phong cách Minimalist Modern, tối ưu hóa state management (React Hooks, Session Storage) cho quy trình chọn chuyến và đặt chỗ ngồi phức tạp trên sơ đồ toa tàu thời gian thực.
+          </li>
+          <li>
+            <strong>Kiến trúc Backend (NestJS + TypeScript):</strong> Xây dựng hệ thống RESTful API cho các module Trains, Carriages, Routes và Trips; tối ưu hóa truy vấn dữ liệu MongoDB đảm bảo tốc độ phản hồi cao khi xử lý lưu lượng đặt vé lớn.
+          </li>
+          <li>
+            <strong>Quản trị & Báo cáo:</strong> Phát triển Admin Dashboard với biểu đồ phân tích doanh thu và lưu lượng hành khách trực quan; áp dụng quy trình kiểm thử Git, Code Review và Linting chuẩn mực doanh nghiệp.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer Page 1 -->
+    <footer class="page-footer">
+      <span>Nguyễn Đình Tiến Mạnh — Curriculum Vitae</span>
+      <span>Trang 1 / 2</span>
+    </footer>
+  </div>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page">
+    <!-- Projects Section -->
+    <section class="section">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>DỰ ÁN TIÊU BIỂU</span>
+      </div>
+
+      <!-- Project 1: RoboPlanner (Flagship AI) -->
+      <div class="project-item featured">
+        <div class="project-header">
+          <div class="project-title">RoboPlanner (AI20K-162) — Warehouse Robot Planning Agent</div>
+          <div class="project-tagline">VinUni AI Thực Chiến • Nhóm App-022</div>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-primary">Vai trò: AI Agent Developer</span>
+          <span class="badge badge-success">Flagship AI Project</span>
+          <span class="badge badge-tech">LangGraph</span>
+          <span class="badge badge-tech">Python 3.11</span>
+          <span class="badge badge-tech">Claude API</span>
+          <span class="badge badge-tech">PyBullet 3D</span>
+          <span class="badge badge-tech">FastAPI</span>
+          <span class="badge badge-tech">Three.js</span>
+          <span class="project-links">
+            <a href="https://ai20k-robot-planner.onrender.com" target="_blank">🔗 Live Demo</a> • 
+            <a href="https://github.com/AI20K-Build-Cohort-2/C2-App-022.git" target="_blank">GitHub Repo</a>
+          </span>
+        </div>
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <div class="metric-value">0%</div>
+            <div class="metric-label">Hallucinated Done</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Infeasible Rejection</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">&lt;50ms</div>
+            <div class="metric-label">Dynamic Replanning</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">346</div>
+            <div class="metric-label">Tests Passing</div>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            Xây dựng hệ thống Agent tự trị điều khiển robot kho nhận lệnh tiếng Việt tự nhiên, phân rã mục tiêu thành chuỗi hành động qua vòng lặp LangGraph khép kín: <em>parse → perceive → plan → act → observe → replan</em>.
+          </li>
+          <li>
+            Tích hợp tool-calling đọc trực tiếp trạng thái thật từ sim vật lý (PyBullet 3D, MuJoCo, 2D Grid + A*), cơ chế phát hiện chướng ngại vật động và tự tính toán lại đường đi trong dưới 50ms mà không làm gián đoạn tác vụ.
+          </li>
+          <li>
+            Thiết lập hệ thống kiểm chứng oracle độc lập và guardrails kiểm soát trạng thái, đạt độ tin cậy tuyệt đối (0% báo cáo hoàn thành giả mạo, 100% từ chối chính xác khi nhiệm vụ bất khả thi).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Project 2: RailGo -->
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">RailGo — Hệ thống Đặt vé Tàu hỏa Trực tuyến Full-stack</div>
+          <div class="project-tagline">FPT Software Project</div>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-primary">Vai trò: Fullstack Developer</span>
+          <span class="badge badge-tech">ReactJS</span>
+          <span class="badge badge-tech">NestJS</span>
+          <span class="badge badge-tech">TypeScript</span>
+          <span class="badge badge-tech">MongoDB</span>
+          <span class="project-links">
+            <a href="https://gitlab.com/30MUNH/railgo.git" target="_blank">🔗 GitLab Repo</a>
+          </span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            Phát triển nền tảng web full-stack cho phép người dùng tra cứu hành trình, chọn ghế tương tác trên sơ đồ toa tàu và thanh toán online; tích hợp module Admin quản trị lịch trình, giá vé và khuyến mãi.
+          </li>
+          <li>
+            Kiến trúc hệ thống module bằng NestJS + TypeScript, chuẩn hóa RESTful APIs và tối ưu hóa xử lý đồng thời cho các phiên giao dịch đặt vé cao điểm.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Project 3: OrbitTask & G4_TechnicalStore -->
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">OrbitTask & G4_TechnicalStore — Ứng dụng Quản lý & E-Commerce</div>
+          <div class="project-tagline">Academic & Personal Projects</div>
+        </div>
+        <div class="project-meta">
+          <span class="badge badge-primary">Frontend & Fullstack</span>
+          <span class="badge badge-tech">ReactJS</span>
+          <span class="badge badge-tech">Gemini API</span>
+          <span class="badge badge-tech">NodeJS</span>
+          <span class="badge badge-tech">PostgreSQL</span>
+          <span class="project-links">
+            <a href="https://github.com/phwnganh/task-management-website" target="_blank">🔗 OrbitTask Repo</a> • 
+            <a href="https://github.com/30MUNH/G4_TechnicalStore" target="_blank">G4_Store Repo</a>
+          </span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>OrbitTask:</strong> Nền tảng quản lý dự án tích hợp Gemini API để tự động phân tích tiến độ, gợi ý phân bổ công việc và tối ưu hóa năng suất nhóm làm việc.
+          </li>
+          <li>
+            <strong>G4_TechnicalStore:</strong> Hệ thống thương mại điện tử kiến trúc microservices bán lẻ thiết bị công nghệ với phân quyền người dùng đa cấp và cổng thanh toán trực tuyến.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>HỌC VẤN & CHỨNG CHỈ QUỐC TẾ</span>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card highlight">
+          <div class="edu-name">CHỨNG CHỈ ĐÀO TẠO NHÂN TÀI AI THỰC CHIẾN</div>
+          <div class="edu-sub">Đồng cấp bởi Tập đoàn Vingroup & Đại học VinUni (2026)</div>
+          <div class="edu-desc">
+            • <strong>Khung năng lực toàn cầu SFIA (Level 3 - 4):</strong> Hoàn thành chương trình đào tạo tài năng 12 tuần full-time (6 tuần học chuyên sâu tại VinUni & 6 tuần thực chiến doanh nghiệp tại VSF).<br>
+            • Đào tạo chuyên sâu về AI Agent, ReAct loop, Prompt Engineering, đánh giá và kiểm thử an toàn sản phẩm AI trong môi trường doanh nghiệp.
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-name">TRƯỜNG ĐẠI HỌC FPT (FPT UNIVERSITY)</div>
+          <div class="edu-sub">Kỹ thuật phần mềm (Software Engineering) | 2023 – Nay</div>
+          <div class="edu-desc">
+            • <strong>Chuyên ngành chính:</strong> Kỹ thuật phần mềm, cấu trúc dữ liệu và giải thuật, lập trình hướng đối tượng (OOP), cơ sở dữ liệu và kiến trúc hệ thống thông tin.<br>
+            • Tích cực tham gia các dự án đồ án thực hành môn học, ứng dụng công nghệ web hiện đại và tích hợp mô hình AI thông minh.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strengths & Core Values -->
+    <section class="section" style="margin-bottom: 0;">
+      <div class="section-title">
+        <span class="bullet"></span>
+        <span>ĐIỂM MẠNH & GIÁ TRỊ CỐT LÕI</span>
+      </div>
+      <ul class="bullet-list">
+        <li>
+          <strong>Khả năng tự học nhanh & thích ứng cao:</strong> Nhanh chóng làm chủ các framework và công nghệ mới (LangGraph, PyBullet, NestJS, Tailwind CSS) từ tài liệu chính thức và triển khai trực tiếp vào dự án thực tiễn.
+        </li>
+        <li>
+          <strong>Tư duy giải thuật & xử lý vấn đề:</strong> Có nền tảng toán học và tư duy giải thuật vững chắc (A* pathfinding, state machines, logic phân tích dữ liệu), luôn chú trọng tính đúng đắn và khả năng mở rộng của mã nguồn.
+        </li>
+        <li>
+          <strong>Kỷ luật và tinh thần đồng đội:</strong> Hoàn thành công việc đúng tiến độ, tuân thủ nghiêm ngặt quy trình Code Review, Linting và kiểm thử tự động; chủ động lắng nghe và tiếp thu đóng góp từ đồng nghiệp và mentor.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer Page 2 -->
+    <footer class="page-footer">
+      <span>Nguyễn Đình Tiến Mạnh — Curriculum Vitae</span>
+      <span>Trang 2 / 2</span>
+    </footer>
+  </div>
+
+</body>
+</html>

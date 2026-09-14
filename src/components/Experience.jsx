@@ -80,7 +80,7 @@ export default function Experience() {
                       </div>
                       <div>
                         <h4 className="font-sans text-md font-semibold text-foreground">
-                          Dự án thực tập
+                          Dự án đảm nhiệm
                         </h4>
                         <p className="font-sans text-sm text-accent-secondary font-medium">
                           {exp.project.name}

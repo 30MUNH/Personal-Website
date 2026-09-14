@@ -70,7 +70,7 @@ export default function Navbar() {
             onClick={(e) => handleLinkClick(e, "#home")}
             className="font-display text-2xl font-bold tracking-tight text-foreground hover:opacity-90 transition-opacity"
           >
-            Mạnh<span className="text-accent">.dev</span>
+            Ambrose<span className="text-accent">.dev</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left">
             <span className="font-display text-xl font-bold text-foreground">
-              Mạnh<span className="text-accent">.dev</span>
+              Ambrose<span className="text-accent">.dev</span>
             </span>
             <p className="mt-1 font-sans text-xs text-muted-foreground">
               Built with React, Vite & Tailwind CSS. Designed to wow.

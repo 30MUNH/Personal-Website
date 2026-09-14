@@ -88,7 +88,7 @@ export default function Projects() {
                             )}
                             {project.id === "proj-railgo" && (
                               <span className="font-mono text-[11px] font-semibold text-accent bg-accent/5 border border-accent/15 px-2.5 py-0.5 rounded-full">
-                                FPT Software Intern
+                                FPT Software
                               </span>
                             )}
                           </div>
