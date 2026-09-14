@@ -82,7 +82,7 @@ export default function Projects() {
                               {project.role}
                             </span>
                             {isRoboPlanner && (
-                              <span className="font-mono text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-500/25 px-2.5 py-0.5 rounded-full">
+                              <span className="font-mono text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 px-2.5 py-0.5 rounded-full">
                                 AI20K • VinUni & VSF
                               </span>
                             )}
